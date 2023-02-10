@@ -1,0 +1,63 @@
+ITA 0443 - STATISTICS WITH R PROGRAMMING FOR REAL TIME PROBLEM
+NAME – Y.Madan Reddy
+REG NO -192125015
+EXERCISE 1 (RESHAPE )
+1.
+library(tidyr)
+data_long = gather(country, detail, value, population_in_million:gdp_percapita, factor_key=TRUE)
+data_long
+2.
+country_w_to_L<- reshape(data=country, idvar="countries",
+                         varying = c("population_in_million","gdp_percapita"),
+                         v.name=c("value"),
+                         times=c("population_in_million","gdp_percapita"),
+                         new.row.names = 1:1000,
+                         direction="long")
+country_w_to_L
+MELTING AND CASTING :-
+1.
+names(airquality) <- tolower(names(airquality))
+head(airquality)
+aql <- melt(airquality)
+2.
+aql <- melt(airquality, id.vars = c("month", "day"))
+aqw <- dcast(aql, month + day ~ variable)
+head(aqw)
+3.
+names(airquality) <- tolower(names(airquality))
+aqm <- melt(airquality, id=c("month", "day"), na.rm=TRUE)
+
+acast(aqm, day ~ month ~ variable)
+acast(aqm, month ~ variable, mean)
+acast(aqm, month ~ variable, mean, margins = TRUE)
+dcast(aqm, month ~ variable, mean, margins = c("month", "variable"))
+4.
+DataSet <- airquality
+str(DataSet)
+colnames(DataSet)
+Na <- summary(is.na(DataSet))
+print(Na)
+FILE MANUPALATION 
+1.
+data <- read.csv("input.csv")
+	print(data)
+a)
+sal <- max(data$salary)
+	print(sal)
+b)
+retval <- subset(data, salary == max(salary))
+	print(retval)
+c)
+retval <- subset( data, dept == "IT")
+	print(retval)
+d)
+info <- subset(data, salary > 600 & dept == "IT")
+	print(info
+e)
+retval <- subset(data, as.Date(start_date) > as.Date("2014-01-01"))
+	print(retval
+4.
+write.csv(retval,"output.csv")
+	newdata <- read.csv("output.csv")
+	print(newdata)
+
