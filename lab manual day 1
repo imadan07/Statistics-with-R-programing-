@@ -1,0 +1,409 @@
+ITA 0443 - STATISTICS WITH R PROGRAMMING FOR REAL TIME PROBLEM
+NAME – Y.Madan Reddy
+REG NO -192125015
+
+EXERCISE 1
+1.
+name=readline(prompt = "Enter your name :")
+age = as.integer(readline(prompt = "Enter your age :"))
+print(paste("Hi, ",name," next year you will be ",age+1," years old")
+2.
+b=5
+l=6
+print("Area of rectangle :")
+print(l*b)
+3.
+a=10
+b=20
+print("Addition :")
+print(a+b)
+print("Subtraction :")
+print(a-b)
+print("Multiplication :")
+print(a*b)
+print("Division :")
+print(a/b)
+print("Power :")
+print(a**b)
+4.
+str="arjun"
+print(str)
+5.
+a=1906
+b="arjun"
+c=TRUE
+d=2+12i
+print(typeof(a))
+print(typeof(b))
+print(typeof(c))
+print(typeof(d))
+6.
+v1=c(3,3,3)
+v2=c(4,4,4)
+print("Vector Addition :")
+print(v1+v2)
+print("Vector Subtraction :")
+print(v1-v2)
+print("Vector Multiplication ")
+print(v1*v2)
+print("Vector Division :")
+print(v1/v2)
+7.
+a <- 5
+b = 6
+8 -> d
+9 ->> e
+print(a)
+print(b)
+print(e)
+print(d)
+8.
+EXERCISE 2
+1.
+r1=c(1,2,3,4)
+r2=c(9,10,11,12)
+mat1=matrix(r1,nrow=2,ncol=2,byrow = TRUE)
+row.names(mat1)=c("A","B")
+colnames(mat1)=c("C","D")
+mat2=matrix(r2,nrow=2,ncol=2,byrow = TRUE)
+row.names(mat2)=c("A","B")
+colnames(mat2)=c("C","D")
+print("First matrix :")
+print(mat1)
+print("Second matrix :")
+print(mat2)
+print("Matrix Addition :")
+print(mat1+mat2)
+print("Matrix subtraction :")
+print(mat2-mat1)
+2.
+arr=array(data=c(1,2,3,4),dim=4,dimnames = row.names("a"))
+print(arr)
+print("Sum of Array :")
+print(sum(arr))
+print("adding an element into the array") 
+arr=array(data=c(arr[0:2],5,3:4))
+print(arr)
+3.
+m1 <- matrix(C<-(1:10),nrow=5, ncol=6)
+m1
+m2 <- apply(m1, 2, sum)
+m2
+4.
+r1=c(15,2,33,4)
+r2=c(9,10,11,33)
+mat1=matrix(r1,nrow=2,ncol=2,byrow = TRUE)
+row.names(mat1)=c("A","B")
+colnames(mat1)=c("C","D")
+mat2=matrix(r2,nrow=2,ncol=2,byrow = TRUE)
+row.names(mat2)=c("A","B")
+colnames(mat2)=c("C","D")
+print("Scalar multiplication :")
+print(mat1*2)
+print("Matrix Multiplication :")
+print(mat1*mat2)
+5.
+r1=c(15,2,33,4)
+r2=c(9,10,11,33)
+mat1=matrix(r1,nrow=2,ncol=2,byrow = TRUE)
+row.names(mat1)=c("A","B")
+colnames(mat1)=c("C","D")
+print("Matrix :")
+print(mat1)
+print("Transpose of Matrix :")
+print(t(mat1))
+6.
+x <- list(name ="Arjun", reg_no = 07)
+class(x)<-"student"
+print(x)
+7.
+setClass("Student",slots = list(name="character",reg_no="numeric"))
+student1=new("Student",name="arjun",reg_no=01)
+print(student1)
+8.
+r1=c(15,2,33,4)
+r2=c(9,10,11,33)
+mat1=matrix(r1,nrow=2,ncol=2,byrow = TRUE)
+row.names(mat1)=c("A","B")
+colnames(mat1)=c("C","D")
+mat2=matrix(r2,nrow=2,ncol=2,byrow = TRUE)
+row.names(mat2)=c("A","B")
+colnames(mat2)=c("C","D")
+print("Original matrices :")
+print(mat1)
+print(mat2)
+print("Matrices after Cbind :")
+print(cbind(mat1,mat2))
+print("Matrices after Rbind :")
+print(rbind(mat1,mat2))
+9.
+name=c("aqua","camor","ellen","goat")
+age=c(1,25,39,47)
+gender=c("M","F","M","F")
+df=data.frame(name,age,gender)
+print("Dataframe :")
+print(df)
+print("Stucture of Dataframe :")
+print(str(df)
+EXERCISE 3
+1.
+n=as.integer(readline(prompt = "Enter a number :"))
+start=2
+flag=0
+for(i in start:(n-1)){
+  if(n%%i==0){
+    flag=1
+  }
+}
+if(flag==0){
+  print("is a prime number")
+}else if(flag==1){
+  print("is not a prime number")
+}
+2.
+x = 1
+repeat {
+  print(x)
+  if (x > 6) {
+    break
+  } 
+  x = x + 1
+}
+3.
+add <- function(x, y) {
+  return(x + y)
+}
+subtract <- function(x, y) {
+  return(x - y)
+}
+multiply <- function(x, y) {
+  return(x * y)
+}
+divide <- function(x, y) {
+  return(x / y)
+}
+print("Select operation.")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Divide")
+choice = as.integer(readline(prompt="Enter choice[1/2/3/4]: "))
+num1 = as.integer(readline(prompt="Enter first number: "))
+num2 = as.integer(readline(prompt="Enter second number: "))
+operator <- switch(choice,"+","-","*","/")
+result <- switch(choice, add(num1, num2), subtract(num1, num2), multiply(num1, num2), divide(num1, num2))
+print(paste(num1, operator, num2, "=", result))
+4.
+num = as.integer(readline(prompt="Enter a number: "))
+sum = 0
+temp = num
+while(temp > 0) {
+  digit = temp %% 10
+  sum = sum + (digit ^ 3)
+  temp = floor(temp / 10)
+}
+if(num == sum) {
+  print(paste(num, "is an Armstrong number"))
+} else {
+  print(paste(num, "is not an Armstrong number"))
+}
+5.
+x <- 2
+y <- 1
+z <- complex(real = x, imaginary = y)
+z
+6.
+a<-c(11,22,33,44,55,67)
+sum(a)
+mean(a)
+product(a)
+7.
+lcm <- function(x, y) {
+  v1=c()
+  v2=c()
+  for(i in 1:10){
+    v1=append(v1,i*x)
+  }
+  for(i in 1:10){
+    v2=append(v2,i*y)
+  }
+  for(i in v1){
+    for(j in v2){
+      if(i==j){
+        return(i)
+      }
+    }
+  }
+}
+num1 = as.integer(readline(prompt = "Enter first number: "))
+num2 = as.integer(readline(prompt = "Enter second number: "))
+print(paste("The LCM is", lcm(num1, num2)))
+8.
+a<-c(11,22,33,44,55,67)
+sort(a)
+Exercise 4 
+1.
+a <- c(1, 20, 3, 40, 50)
+b <- c(4, 5,6)
+result <- a + b
+print(result)
+2.
+name<-list("arjun","kabir","vikram")
+name_1<-lapply(name,tolower)
+name_1
+3.
+name<-list("arjun","kabir","vikram")
+name_1<-sapply(name,tolower)
+name_1
+4.
+data(iris)
+tapply(iris$Sepal.Width, iris$Species, median)
+5.
+sum<- function(n) {
+  if(n <= 1) {
+    return(n)
+  } else {
+    return(n + sum(n-1))
+  }
+}
+sum(6)
+6.
+recurse_fibonacci <- function(n) {
+  if(n <= 1) {
+    return(n)
+  } else {
+    return(recurse_fibonacci(n-1) + recurse_fibonacci(n-2))
+  }
+}
+nterms = as.integer(readline(prompt="How many terms? "))
+if(nterms <= 0) {
+  print("Plese enter a positive integer")
+} else {
+  print("Fibonacci sequence:")
+  for(i in 0:(nterms-1)) {
+    print(recurse_fibonacci(i))
+  }
+  7.
+fact<-function(a)
+{
+  if(a>0)
+  {
+    return(a*fact(a-1))
+  }
+  else
+  {
+    return(1)
+  }
+}
+fact(5)
+8.
+vector1 <- c(1, 2, 3, 4, 5)
+vector2 <- c(2, 4, 1, 2, 10)
+mapply(max, vector1, vector2)
+CREATION AND MANIPULATION OF DATAFRAMES IN R
+1.
+Id = rep(1:4, each = 3)
+	x=seq(1,43,along.with=Id)
+	y=seq(-20,0,along.with=Id)
+	Letter=rep(letters[1:3],4)
+	df=data.frame(Id,Letter,x,y)
+	df
+2.
+df_new <- data.frame(Id=unique(df$Id))
+	df_new$x.a <- df[df$Letter == "a", "x"]
+	df_new$y.a <- df[df$Letter == "a", "y"]
+	df_new$x.b <- df[df$Letter == "b", "x"]
+	df_new$y.b <- df[df$Letter == "b", "y"]
+	df_new$x.c <- df[df$Letter == "c", "x"]
+	df_new$y.c <- df[df$Letter == "c", "y"]
+3.
+df1 <- data.frame(Id = c(1, 2, 3, 4), Age = c(14, 12, 15, 10))
+	df2 <- data.frame(Id = c(1, 2, 3, 4), Sex = c("F", "M", "M", "F"), Code = c("a", "b", "c", "d"))
+	M <- merge(df1, df2, by = "Id")
+
+
+4.
+df1<-data.frame(Id = c(1, 2, 3, 4), Age = c(14, 12, 15, 10))
+	df2 <- data.frame(Id = c(1, 2, 3, 4), Sex = c("F", "M", "M", "F"), Code = c("a", "b", "c", "d"))
+	M <- merge(df1, df2, by = "Id")
+	df3 <- data.frame(id2 = c(4, 3, 2, 1), score = c(100, 98, 94, 99))
+	N <- merge(M, df3, by.x = "Id", by.y = "id2")
+5.
+N_without_sex_code <- N[,c("Id", "Age", "score")]
+	values <- c(N_without_sex_code$Id, N_without_sex_code$Age, N_without_sex_cod$score)
+	ind <- c(rep("Id", 4), rep("Age", 4), rep("score", 4))
+	df_values_ind <- data.frame(values, ind)
+6.
+if (!is.data.frame(trees)) {
+	trees <- as.data.frame(trees)
+	}
+	A <- data.frame(Girth = c(mean(trees$Girth), min(trees$Girth), max(trees$Girth), sum(trees$Girth)),
+	Height = c(mean(trees$Height), min(trees$Height), max(trees$Height), sum(trees$Height)),
+	Volume = c(mean(trees$Volume), min(trees$Volume), max(trees$Volume),
+	sum(trees$Volume)))
+	rownames(A) <- c("mean_tree", "min_tree", "max_tree", "sum_tree")
+7.
+A_sorted <- A[order(A[,1]),]
+	rownames(A_sorted) <- c("mean", "min", "max", "sum")
+	A_sorted
+8.
+df <- data.frame(Ints=integer(), Logicals=logical(), Doubles=numeric(), Characters=character(),
+	stringsAsFactors=FALSE)
+	df
+
+9.
+X = c(1,2,3,1,4,5,2)
+	Y = c(0, 3, 2, 0, 5, 9, 3)
+	XY = data.frame(X, Y)
+	duplicates = duplicated(XY)
+	XY_unique = unique(XY)
+10.
+data("Titanic")
+	df <- as.data.frame(Titanic)
+	df1 <- subset(df, Class == "1st" & Survived == "NO")
+	df2 <- data.frame(Sex = c("Male", "Female", "Male", "Female"),
+	Age = c("Child", "Child", "Adult", "Adult"),
+	Freq = c(sum(df1$Sex == "male" & df1$Age == "Child"),
+	sum(df1$Sex == "female" & df1$Age == "Child"),
+	sum(df1$Sex == "male" & df1$Age == "Adult"),
+	sum(df1$Sex == "female" & df1$Age == "Adult")))
+11.
+buildings <- data.frame(location=c(1, 2, 3), name=c("building1", "building2","building3"))
+	data <- data.frame(survey=c(1,1,1,2,2,2),location=c(1,2,3,2,3,1),efficiency=c(51,64,70,7,80,58))
+	buildingStats <- merge(buildings, data, by="location")
+12.
+buildings <- data.frame(location = c(1, 2, 3), name = c("building1", "building2", "building3")) data <-
+	data.frame(survey = c(1, 1, 1, 2, 2, 2), LocationID = c(1, 2, 3, 2, 3, 1), efficiency = c(51, 64, 70, 71, 80,
+	58))
+	merge(buildings, data))
+
+
+
+13.
+buildings <- data.frame(location=c(1, 2, 3), name=c("building1", "building2", "building3"))
+	buildings2 <- data.frame(location=c(5, 4, 6), name=c("building5", "building4", "building6"))
+	allBuildings <- rbind(buildings, buildings2)
+
+14.
+buildings3_new <- subset(buildings3, select = c("location", "name"))
+	buildings3_new <- buildings3[, c("location", "name")]
+	buildings3_new
+
+15.
+buildings3_new <- subset(buildings3, select = c("location", "name"))
+	buildings3_new <- buildings3[, c("location", "name")]
+	buildings3_new
+	buildings$startEfficiency <- NA
+	buildings2$startEfficiency <- NA
+	allBuildings <- rbind(buildings, buildings2, buildings3)
+	allBuildings
+
+
+
+
+
+
+
+
+      
+     
