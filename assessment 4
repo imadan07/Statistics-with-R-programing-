@@ -2,16 +2,11 @@ ITA-0433 STATISTICS WITH R PRPOGRAMMING
 NAME –Y.Madan Reddy 
 REG.NO –192125015
 1.
-# Load the iris dataset
 data(iris)
-
-# Split the dataset into train and test sets
 set.seed(123)
 split_index <- createDataPartition(iris$Species, p = 0.8, list = FALSE)
 train_data <- iris[split_index, ]
 test_data <- iris[-split_index, ]
-
-# Fit the logistic regression model using petal length and width as features
 library(caret)
 model <- train(Species ~ Petal.
 
