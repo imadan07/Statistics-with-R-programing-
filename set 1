@@ -1,0 +1,182 @@
+ITA0433-STATISTICS WITH R PROGRAMMING 
+NAME-Y.MADAN REDDY 
+REG NO-192125015
+
+1)
+a<-c(1,2,3)
+b<-c(4,5,6)
+c<-c(7,8,9)
+m<-cbind(a,b,c)
+print("content of the matrix:")
+print(m)
+OUTPUT:-
+     a b c
+[1,] 1 4 7
+[2,] 2 5 8
+[3,] 3 6 9
+
+2)
+a=c(1,2,3,4,0,-1,-3)
+b=c("red","green","white")
+c=c(TRUE,TRUE,TRUE,FALSE,TRUE,FALSE)
+print(a)
+print(typeof(a))
+print(b)
+print(typeof(b))                                               
+print(c)
+princomp(typeof(c))
+OUTPUT:-
+print(a)
+[1]  1  2  3  4  0 -1 -3
+> print(typeof(a))
+[1] "double"
+> print(b)
+[1] "red"   "green" "white"
+> print(typeof(b))                                               
+[1] "character"
+> print(c)
+[1]  TRUE  TRUE  TRUE FALSE  TRUE FALSE
+> princomp(typeof(c))
+
+3)
+a=matrix(c(2,0,1,3),ncol=2)
+b=matrix(c(5,2,4,-1),ncol=2)
+a+b
+a-b
+a*b
+OUTPUT:-
+[,1] [,2]
+[1,]    7    5
+[2,]    2    2
+> a-b
+     [,1] [,2]
+[1,]   -3   -3
+[2,]   -2    4
+> a*b
+     [,1] [,2]
+[1,]   10    4
+[2,]    0   -3
+
+4)
+num_vec<-c(1.5,2.5,3.5,4.5,5.5,6.5)
+com_vec<-c(2+3i,4+5i,5+6i,6+7i,7+8i,8+9i)
+log_vec<-c(TRUE,FALSE,TRUE,FALSE,TRUE,FALSE)
+char_vec<-c("apple","banana","cherry","date","elderberry","fig")
+g1<-1:20
+g2<-"python"
+g3<-"html"
+my_list<-list(g1=g1,g2=g2,g3=g3)
+g4<-"r prog"
+my_list<-g4
+print(my_list)
+OUTPUT:-
+[1] "r prog"
+
+5)
+rice_price<-40.75
+sugar_price<-30
+rice_qty<-2
+sugar_qty<-5
+total_amount<-(rice_qty*rice_price)+(sugar_qty*sugar_qty)
+cat("total amount of 2kg rice and 5kg of sugar:")
+OUTPUT:-
+
+6)
+mysales<-array(1:30,dim = c(3,5,2))
+print(mysales)
+mysales<-vector(mode="numeric",lenght=30)
+dim(mysales)<-c(3,5,2)
+mysales[]<-1:30
+print(mysales)
+OUPUT:-
+1
+
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    1    4    7   10   13
+[2,]    2    5    8   11   14
+[3,]    3    6    9   12   15
+
+, , 2
+
+     [,1] [,2] [,3] [,4] [,5]
+[1,]   16   19   22   25   28
+[2,]   17   20   23   26   29
+[3,]   18   21   24   27   30
+
+7)
+set.seed(123)
+m<-matrix(sample(1:100,12),nrow=3,byrow = TRUE)
+colnames(m)<-c("uno","dos","tres","cuatro")
+townames(m)<-c("x","y","z")
+m_scaled<-m/10
+print(m_scaled)
+uno_col<-m[,"uno"]
+print(uno_col)
+8)
+g1<-1:20
+g2<-"python"
+g3<-"html"
+sample_list<-list(g1,g2,g3)
+g4<-"r prog"
+g5<-"c++"
+sample_list<-c(sample_list,list(g4,g5))
+print(sample_list)
+extracted_list<-list(sample_list[1][-2],sample_list[[3]],sample_list[[4]],sample_list[[5]])
+print(extracted_list)
+OUTPUT:-
+[[1]]
+[[1]][[1]]
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13
+[14] 14 15 16 17 18 19 20
+
+
+[[2]]
+[1] "html"
+
+[[3]]
+[1] "r prog"
+
+[[4]]
+[1] "c++"
+
+9)
+number<1:10
+thislist<-list("apple","banana",1)
+thismatrix<-matrix(c(1,2,3,4,5,6),nrow = 3,ncol = 2)
+multiarray<-array(1:20,dim = c(2,3,4))
+direction<-factor(c("north","west"))
+data_frame<-data.frame(training=c("strength","stamina","other"),pulse=c(100,150,120),duration=c(60,30,45))
+print(number)
+print(thislist)
+print(thismatrix)
+print(data_frame)
+print(direction)
+print(multiarray)
+10)
+a<-c(1,2,3)
+b<-c(4,5,6)
+c<-c(7,8,9)
+dm<-matrix(rbind(a,b,c),nrow=3,ncol=3)
+dm
+dm[2,]
+dm[3,2]
+dm[2,2]
+dm[,3]
+dm[1,]
+output:-
+[,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    4    5    6
+[3,]    7    8    9
+> dm[2,]
+[1] 4 5 6
+> dm[3,2]
+[1] 8
+> dm[2,2]
+[1] 5
+> dm[,3]
+[1] 3 6 9
+> dm[1,]
+[1] 1 2 3
+
+
